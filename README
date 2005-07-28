@@ -1,0 +1,79 @@
+Tk-Gpack version 0.05
+=====================
+
+DESCRIPTION
+##########################
+
+Gpack uses a series of single letter abbreviations to expand packing or gridding 
+options. The functions these strings are as follows: gpack xpack spack tpack, ggrid xgrid 
+sgrid and tgrid.  by using this module all of these functions will be exported into 
+the Tk namespace.
+
+SYNOPSIS
+##########################
+
+gpack qw($frame1 stawx1fx $frame2 stawx1fb $frame3 stawx1fb) ; # group pack
+
+# same as: 
+# $frame1->pack(side => top, -anchor => w, -expand => 1, -fill => x) ;   
+# $frame2->pack(-side => top, -anchor => w, -expand => 1, -fill => both) ;   
+# $frame3->pack(-side => top, -anchor => w, -expand => 1, -fill => both) ;    
+
+$button1->xpack('slan', -in => $frame1)  ; # expand pack
+
+# same as: 
+# $button1->pack(-side => left, -anchor => n, -in => $frame1) ; 
+
+tpack qw($frame1 $button1 slan $button2 slan) ; # target pack 
+
+# same as: 
+# $button1->pack(-side => left, -anchor => north, -in => $frame1) ; 
+# $button2->pack(-side => left, -anchor => north, -in => $frame1) ; 
+ 
+$derivedbutton1->configure(-geometry => 'slan') ; 
+$derivedbutton1->spack(-in => $frame3)          ; # self pack 
+
+# Note: This only works with Derived objects that define a -geometry ConfigSpec. 
+# Effectively this allows any derived widgets you create to embed their own 
+# gpack or ggrid formated string.  
+
+ggrid qw($button1 r0c0 $button2 r10c10) ; # group grid 
+
+# Grids buttons in opposite corners. 
+
+tgrid qw($frame1 $button1 r0c0 $button2 r10c10) ; # target grid 
+
+# stick $button1 and button2 in $frame1 and in opposite corners
+
+$button1->xgrid('r5c15', -in => $someframe) ; # expand grid
+
+# grid it, and stick it in $someframe
+
+$derivedbutton1->configure(-geometry => 'r0c2') ; 
+$derivedbutton1->sgrid() ; # self grid 
+
+#Note: as above sgrid is dependent on the the widget being Derived. 
+
+INSTALLATION
+###########################
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+DEPENDENCIES
+
+This module requires nothing special
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2005 Crosswire Industries Inc.  (http://www.crosswire.com) 
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.8.6 or,
+at your option, any later version of Perl 5 you may have available.
+
+
