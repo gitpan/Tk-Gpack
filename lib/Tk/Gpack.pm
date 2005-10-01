@@ -4,7 +4,7 @@ use Exporter                ;
 use Tk::Widget              ; 
 our @ISA = qw(Exporter Tk::Widget) ;
 our @EXPORT = qw(gpack xpack spack tpack gplace xplace splace tplace ggrid xgrid sgrid tgrid gunderline _packinate _gridinate _placinate) ;
-our $VERSION = '0.12' 	    ;
+our $VERSION = '0.7' 	    ;
  
 package Tk ;  # Gleefully pollute the root namespace. 
 Exporter::import qw(Tk::Gpack gpack xpack spack tpack gplace xplace splace tplace ggrid xgrid sgrid tgrid gunderline _packinate _gridinate _placinate); 
