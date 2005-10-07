@@ -428,7 +428,7 @@ Add more supported options. Tighten up some of the code.
 
 =head1 COPYRIGHT AND LICENCE
 
-Copyright (C) 2005 Crosswire Industries Inc.  (http://www.crosswire.com) 
+Copyright (C) 2005 IT Operators (http://www.itoperators.com) 
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.6 or,
